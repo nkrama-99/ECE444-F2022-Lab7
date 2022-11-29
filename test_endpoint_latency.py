@@ -6,7 +6,7 @@ numberOfRequests = 100
 
 testData = [
     ['The ocean is big', 0],
-    ['biden is president', 0],
+    ['Biden is president', 0],
     ['The earth is flat', 1],
     ['The ocean is red', 1]
 ]
