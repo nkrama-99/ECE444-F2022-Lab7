@@ -15,8 +15,8 @@ python application.py
 
 Use any API tester (such as Postman) to make a post request to http://ece444-lab7-v1-env.us-east-2.elasticbeanstalk.com/predict or http://127.0.0.1:5000/predict 
 
+POST body:
 ```json
-# POST body:
 {
     "text": "The ocean is big"
 }
