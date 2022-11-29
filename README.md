@@ -1,5 +1,10 @@
 # ECE444-F2022-Lab7
 
+Name: Ramakrishna Natarajan
+
+I followed the official documentation to deploy the app to AWS:
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
+
 ## To test locally
 
 ```powershell
