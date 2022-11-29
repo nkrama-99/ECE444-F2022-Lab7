@@ -5,10 +5,10 @@ from datetime import datetime
 numberOfRequests = 100
 
 testData = [
-    ['The ocean is big', 'REAL'],
-    ['biden is president', 'REAL'],
-    ['The earth is flat', 'FAKE'],
-    ['The ocean is red', 'FAKE']
+    ['The ocean is big', 0],
+    ['biden is president', 0],
+    ['The earth is flat', 1],
+    ['The ocean is red', 1]
 ]
 
 shuffle(testData)
@@ -28,11 +28,11 @@ for data in testData:
         endTime = datetime.now()
         delta = (endTime - startTime).total_seconds() * 1000
 
-        if (response['prediction'] == res):
+        if (response['isFake'] == res):
             results.append(delta)
-            # print(i, "Response time:", delta, "ms")
+        #     print(i, "Response time:", delta, "ms")
         # else:
-            # print("unexpected failure")
+        #     print("unexpected failure")
 
     averageLatency = sum(results) / len(results)
     print("Number of requests successfully made:", len(results))
