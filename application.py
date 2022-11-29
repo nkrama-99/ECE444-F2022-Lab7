@@ -26,7 +26,20 @@ def predict(input):
 # >>>>>>>>>>>> Flask Setup
 application = Flask(__name__)
 
-# predict endpoint to receive prediction
+# Predict endpoint
+# 
+# Expects a JSON with 'text' element of type string which contains the text to check if real or fake news
+# Example POST body:
+# {
+#     "text": "The ocean is big"
+# }
+# 
+# Returns a JSON with 'isFake' element of type int (0 for real news and 1 for fake news)
+# Example result:
+# {
+#     "isFake": 0
+# }
+
 @application.route('/predict', methods=['POST'])
 def predictions():
     content = request.json
