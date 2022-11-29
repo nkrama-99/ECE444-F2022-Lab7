@@ -27,13 +27,13 @@ POST body:
 if real news:
 ```json
 {
-    "prediction": "REAL"
+    "isFake": 0
 }
 ```
 
 if fake news:
 ```json
 {
-    "prediction": "FAKE"
+    "isFake": 1
 }
 ```
