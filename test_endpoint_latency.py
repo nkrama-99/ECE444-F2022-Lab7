@@ -1,4 +1,5 @@
 import requests
+from random import shuffle
 from datetime import datetime
 
 numberOfRequests = 100
@@ -10,13 +11,15 @@ testData = [
     ['The ocean is red', 'FAKE']
 ]
 
+shuffle(testData)
+
 for data in testData:
     text = data[0]
     res = data[1]
 
     results = []
 
-    print("Testing \"{input1}\" with {input2} requests".format(input1=text, input2=numberOfRequests))
+    print("Testing \"{input1}\" ({input2} news) with {input3} requests".format(input1=text, input2=res, input3=numberOfRequests))
 
     for i in range(numberOfRequests):
         startTime = datetime.now()
