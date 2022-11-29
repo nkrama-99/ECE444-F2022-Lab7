@@ -18,7 +18,10 @@ with open('count_vectorizer.pkl', 'rb') as vd:
 # Predict identifies if input is fake news or real news 
 def predict(input):
     prediction = loaded_model.predict(vectorizer.transform([input]))[0]
-    return prediction
+    if prediction == 'FAKE':
+        return 1
+    else:
+        return 0
 
 # >>>>>>>>>>>> Flask Setup
 application = Flask(__name__)
@@ -29,7 +32,7 @@ def predictions():
     content = request.json
     input = content['text']
     prediction = predict(input)
-    return jsonify(prediction=prediction)
+    return jsonify(isFake=prediction)
 
 # index page for aws health checks
 header_text = '''<html>\n<head> <title>EB Flask Test</title> </head>\n</html>'''
