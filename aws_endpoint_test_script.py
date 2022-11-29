@@ -1,3 +1,5 @@
+# To run tests, execute the python script from your console
+
 import requests
 from random import shuffle
 from datetime import datetime
@@ -13,6 +15,7 @@ testData = [
 
 shuffle(testData)
 
+# Iterate through every test data
 for data in testData:
     text = data[0]
     res = data[1]
@@ -21,6 +24,7 @@ for data in testData:
 
     print("Testing \"{input1}\" ({input2} news) with {input3} requests".format(input1=text, input2=res, input3=numberOfRequests))
 
+    # Contact endpoint 100 times and measure the delay
     for i in range(numberOfRequests):
         startTime = datetime.now()
         response = requests.post('http://ece444-lab7-v1-env.us-east-2.elasticbeanstalk.com/predict', json={'text': text})
@@ -34,6 +38,7 @@ for data in testData:
         # else:
         #     print("unexpected failure")
 
+    # Compute and report average latency
     averageLatency = sum(results) / len(results)
     print("Number of requests successfully made:", len(results))
     print("Average latency:", averageLatency, "ms")
